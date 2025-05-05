@@ -10,6 +10,7 @@ from .serializers import TranslateSerializer
 @api_view(['POST'])
 def api_translate(request):
     serializer = TranslateSerializer(data=request.data)
+    print(f"Received data: {request.data}")
 
     if serializer.is_valid():
         source_text = serializer.validated_data['source_text']
